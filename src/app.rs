@@ -62,7 +62,12 @@ fn list_patterns() -> String {
         let possible_value = pattern_opt.to_possible_value().unwrap();
         let name = possible_value.get_name();
         let underline_pattern = format!("\x1b[1m{}\x1b[0m", name);
-        s = format!("{}{:>25}  {}\n", s, underline_pattern, pattern_opt.example())
+        s = format!(
+            "{}{:>25}  {}\n",
+            s,
+            underline_pattern,
+            pattern_opt.example()
+        )
     }
     s
 }

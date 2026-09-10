@@ -75,9 +75,7 @@ fn delimeter() {
 fn input_required_tty() {
     // When stdin is a TTY and no input provided, should show error.
     // This can only be verified manually: `ccase -t snake`
-    ccase(&["-t", "snake"])
-        .failure()
-        .stderr(contains("input"));
+    ccase(&["-t", "snake"]).failure().stderr(contains("input"));
 }
 
 #[test]
